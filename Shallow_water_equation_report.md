@@ -104,8 +104,12 @@ $$
 
    Khởi tạo với 1 cột sóng:
    
-   ![image-20220711232629236](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20220711232629236.png)
+   ![image-20220711232629236](./1_cot_song.png)
 
- 	  Khởi tạo với 2 cột sóng:
+ ![kq_1_cot_song](./kq_1_cot_song.png)
 
-![image-20220711232748381](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20220711232748381.png)
+​	Khởi tạo với 2 cột sóng:
+
+![image-20220711232748381](./2_cot_song.png)
+
+![kq_2_cot_song](./kq_2_cot_song.png)
