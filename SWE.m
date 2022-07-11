@@ -44,6 +44,7 @@ while 1==1
  % redraw the mesh
  set(grid, 'zdata', U);
  drawnow
+ shading interp
  % blending the edges keeps the function stable
  U(:,1) = U(:,2);
  U(:,n+2) = U(:,n+1);
