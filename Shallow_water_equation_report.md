@@ -26,9 +26,11 @@ Các phương trình nước nông - SWEs mô phỏng sự lan truyền của c�
 
 SWEs được phái sinh từ nguyên lý bảo toàn khối lượng và động lượng, bỏ qua các yếu tố ngoại lực khác thì SWE có dạng một hệ phương trình đạo hàm riêng:
 $$
+\begin{align}
 \frac{\partial h}{\partial t} + \frac{\partial uh}{\partial x} + \frac{\partial vh}{\partial y} = 0\\
 \frac{\partial vh}{\partial t} + \frac{\partial (u^2h+\frac{1}{2}gh^2)}{\partial x} + \frac{\partial uvh}{\partial y}=0\\
 \frac{\partial vh}{\partial t}+\frac{\partial uvh}{\partial x}+\frac{\partial (v^2h+\frac{1}{2}gh^2)}{\partial y}=0
+\end{align}
 $$
 Các biến tự do:
 
@@ -53,9 +55,11 @@ Hằng số:
 2. Xây dựng mô hình 
 
 $$
-U=\begin{pmatrix}h\\uh\\vh\end{pmatrix}\\
-F(U)=\begin{pmatrix}uh\\u^2h+\frac{1}{2}gh^2\\uvh\end{pmatrix}\\
-G(U)=\begin{pmatrix}vh\\uvh\\v^2h+\frac{1}{2}gh^2\end{pmatrix}
+\begin{align}
+U&=\begin{pmatrix}h\\uh\\vh\end{pmatrix}\\
+F(U)&=\begin{pmatrix}uh\\u^2h+\frac{1}{2}gh^2\\uvh\end{pmatrix}\\
+G(U)&=\begin{pmatrix}vh\\uvh\\v^2h+\frac{1}{2}gh^2\end{pmatrix}
+\end{align}
 $$
 
 SWE trở thành:
@@ -71,10 +75,15 @@ G là một ma trận 2 chiều lưu trữ vận tốc của các điểm theo t
 3. Xây dựng thuật toán
 
 $$
-\frac{\partial U}{\partial t}+\frac{\partial F(U)}{\partial x}+ \frac{\partial G(U)}{\partial y}=0
-\\\Leftrightarrow\frac{\partial U}{\partial t}=-\frac{\partial F(U)}{\partial x} -\frac{\partial G(U)}{\partial y}\\
-\frac{U^{t+\Delta t}-U^{t-\Delta t}}{2\Delta t}=-\frac{F^t(U_{x+\Delta x})-F^t(U_{x-\Delta x})}{2\Delta x}\\  -\frac{G^t(U_{y+\Delta y})-G^t(U_{y-\Delta y})}{2\Delta y}\\
-\Leftrightarrow U^{t+\Delta t}=U^{t-\Delta t}\\-\frac{\Delta t}{\Delta x}[F^t(U_{x+\Delta x})-F^t(U_{x-\Delta x})]\\-\frac{\Delta t}{\Delta y}[G^t(U_{y+\Delta y})-G^t(U_{y-\Delta y})]
+\frac{\partial U}{\partial t}+\frac{\partial F(U)}{\partial x}+ \frac{\partial G(U)}{\partial y}=0\\
+\begin{align}
+\Leftrightarrow\frac{\partial U}{\partial t}=&-\frac{\partial F(U)}{\partial x} -\frac{\partial G(U)}{\partial y}\\
+\Leftrightarrow\frac{U^{t+\Delta t}-U^{t-\Delta t}}{2\Delta t}=&-\frac{F^t(U_{x+\Delta x})-F^t(U_{x-\Delta x})}{2\Delta x}\\
+&-\frac{G^t(U_{y+\Delta y})-G^t(U_{y-\Delta y})}{2\Delta y}\\
+\Leftrightarrow U^{t+\Delta t}=&\space U^{t-\Delta t}\\
+&-\frac{\Delta t}{\Delta x}[F^t(U_{x+\Delta x})-F^t(U_{x-\Delta x})]\\
+&-\frac{\Delta t}{\Delta y}[G^t(U_{y+\Delta y})-G^t(U_{y-\Delta y})]
+\end{align}
 $$
 
 Từ đây có thể tính được xấp xỉ được các giá trị của U theo từng bước thời gian.
@@ -104,9 +113,9 @@ $$
 
    Khởi tạo với 1 cột sóng:
    
-   ![image-20220711232629236](./1_cot_song.png)
+   ![image-20220711232629236](./1_cot_song.png)		
 
- ![kq_1_cot_song](./kq_1_cot_song.png)
+![kq_1_cot_song](./kq_1_cot_song.png)
 
 ​	Khởi tạo với 2 cột sóng:
 
