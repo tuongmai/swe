@@ -12,9 +12,9 @@ Phạm Vũ Hoàng 20208000
 
 Phạm Tuấn Anh 20205054
 
-Chủ đề 5: Simulation of Shallow Water Equations
+### Chủ đề 5: Simulation of Shallow Water Equations
 
-1. Giới thiệu bài toán 
+#### 1. Giới thiệu bài toán 
 
 Nhiều hiện tượng trong tự nhiên (sóng trong bồn tắm, sóng ở mặt hồ, trong khí quyển, sóng thần,...) có thể được mô hình hóa dưới dạng các phương trình nước nông (shallow water equations - SWEs).
 
@@ -34,25 +34,25 @@ $$
 $$
 Các biến tự do:
 
-1 t - thời gian
++ t - thời gian
 
-2 x - tọa độ của chất điểm theo Ox
++ x - tọa độ của chất điểm theo Ox
 
-3 y - tọa độ của chất điểm theo Oy
++ y - tọa độ của chất điểm theo Oy
 
 Các biến phụ thuộc:
 
-1 h=h(x,y,t) - chiều cao của cột sóng so với bề mặt
++ h=h(x,y,t) - chiều cao của cột sóng so với bề mặt
 
-2 u=u(x,y,t) - vận tốc theo phương x
++ u=u(x,y,t) - vận tốc theo phương x
 
-3 v=v(x,y,t) - vận tốc theo phương y
++ v=v(x,y,t) - vận tốc theo phương y
 
 Hằng số:
 
- g - gia tốc trọng 
++ g - gia tốc trọng 
 
-2. Xây dựng mô hình 
+#### 2. Xây dựng mô hình 
 
 $$
 \begin{align}
@@ -72,7 +72,7 @@ $$
 
 G là một ma trận 2 chiều lưu trữ vận tốc của các điểm theo trục Oy
 
-3. Xây dựng thuật toán
+#### 3. Xây dựng thuật toán
 
 $$
 \frac{\partial U}{\partial t}+\frac{\partial F(U)}{\partial x}+ \frac{\partial G(U)}{\partial y}=0\\
@@ -88,7 +88,7 @@ $$
 
 Từ đây có thể tính được xấp xỉ được các giá trị của U theo từng bước thời gian.
 
-Điều kiện tại biên:
+**Điều kiện tại biên:**
 
 Vận tốc bị đảo ngược:
 
@@ -102,18 +102,18 @@ $$
 v_2=v_1
 \\u_2=-u_1
 $$
-Khởi tạo điều kiện ban đầu:
+**Khởi tạo điều kiện ban đầu:**
 $$
 U(x,y,0)=0\\
 V(x,y,0)=0\\
 H(x,y,0)=0
 $$
 
-4. Kết quả mô phỏng
+#### 4. Kết quả mô phỏng
 
-   Khởi tạo với 1 cột sóng:
-   
-   ![image-20220711232629236](./1_cot_song.png)		
+Khởi tạo với 1 cột sóng:
+
+![image-20220711232629236](./1_cot_song.png)		
 
 ![kq_1_cot_song](./kq_1_cot_song.png)
 
