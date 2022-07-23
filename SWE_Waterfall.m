@@ -2,7 +2,7 @@ clf;
 clear all;
 % define the grid size
 n = 80;
-dt = 0.003;
+dt = 0.03;
 dx = 1;
 dy = 1;
 g = 9.8;
@@ -21,27 +21,27 @@ K = zeros(n+2,n+2);
 for i = 1:30
    K(:,i) = K(:,i) + 3 - (1/300)*i^2;
 end
-for i = 1:n
-   Z = sin(i*pi/10)/i;
-   U(:,i) = U(:,i) + Z;
-end
+%for i = 1:n
+%   Z = sin(i*pi/10)/i;
+%   U(:,i) = U(:,i) + Z;
+%end
 % end addition code - waterfall
 
 % create initial displacement
-%[x,y] = meshgrid( linspace(-3,3,30) );
-%a=-3:0.2:3;
-%b=-3:0.2:3;
-%[x,y]=meshgrid(a,b);
-%R = sqrt(x.^2 + y.^2) + eps;
-%Z = (sin(R)./R);
-%Z = max(Z,0);
+[x,y] = meshgrid( linspace(-3,3,30) );
+a=-3:0.2:3;
+b=-3:0.2:3;
+[x,y]=meshgrid(a,b);
+R = sqrt(x.^2 + y.^2) + eps;
+Z = (sin(R)./R);
+Z = max(Z,0);
 % add displacement to the height matrix
-%w = size(Z,1);
-%i = 1:w;
-%j = 1:w;
-%c = 30:w+29;
-%d = 30:w+29;
-%U(i,j) = U(i,j) + Z;
+w = size(Z,1);
+i = 1:w;
+j = 1:w;
+c = 30:w+29;
+d = 30:w+29;
+U(i,j) = U(i,j) + Z;
 %U(c,d) = max(U(c,d),Z+1);
 
 % empty matrix for half-step calculations
